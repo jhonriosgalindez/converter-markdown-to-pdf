@@ -1,4 +1,4 @@
-# MarkDraft — Editor de Markdown a PDF de Alta Fidelidad
+# MarkDraft — Editor de Markdown a PDF
 
 ¡Bienvenido a **MarkDraft**! Esta es una aplicación web interactiva y moderna de una sola página (SPA) diseñada para redactar, formatear y exportar documentos de Markdown directamente a archivos PDF de alta calidad desde el navegador, con control de diseño preciso en tiempo real.
 
