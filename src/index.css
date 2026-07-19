@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/* Custom markdown styling for preview and print */
+.markdown-preview {
+  font-family: var(--font-sans);
+  font-size: 0.625rem; /* 10px */
+  line-height: 1.45;
+  color: #374151; /* Elegant dark slate gray */
+}
+
+.markdown-preview.serif-font {
+  font-family: var(--font-serif);
+}
+
+.markdown-preview h1 {
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #111827;
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+  border-bottom: none;
+  padding-bottom: 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.markdown-preview h2 {
+  font-size: 0.75rem; /* 12px */
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #111827;
+  margin-top: 1.25rem;
+  margin-bottom: 0.625rem;
+  border-bottom: 1px solid #374151; /* Dark solid thin rule from the reference */
+  padding-bottom: 0.35rem; /* Increased padding to separate line from letters */
+  line-height: 1.4; /* Slightly more height to prevent descender clipping */
+  letter-spacing: 0.05em;
+}
+
+.markdown-preview h3 {
+  font-size: 0.625rem; /* 10px */
+  font-weight: 600;
+  color: #111827;
+  margin-top: 0.625rem;
+  margin-bottom: 0.15rem;
+  line-height: 1.25;
+}
+
+.markdown-preview h4 {
+  font-size: 0.625rem; /* 10px */
+  font-weight: 600;
+  color: #4b5563;
+  margin-top: 0.5rem;
+  margin-bottom: 0.15rem;
+}
+
+.markdown-preview p {
+  font-size: 0.625rem; /* 10px */
+  line-height: 1.45;
+  color: #374151;
+  margin-top: 0;
+  margin-bottom: 0.375rem;
+}
+
+.markdown-preview a {
+  color: #2563eb;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.markdown-preview a:hover {
+  color: #1d4ed8;
+  border-bottom-color: #1d4ed8;
+}
+
+.markdown-preview ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0.15rem;
+  margin-bottom: 0.375rem;
+}
+
+.markdown-preview ol {
+  list-style-type: decimal;
+  padding-left: 1rem;
+  margin-top: 0.15rem;
+  margin-bottom: 0.375rem;
+}
+
+.markdown-preview li {
+  font-size: 0.625rem; /* 10px */
+  line-height: 1.45;
+  margin-top: 0.15rem;
+  margin-bottom: 0.15rem;
+  color: #374151;
+}
+
+.markdown-preview ul li {
+  position: relative;
+  padding-left: 0.75rem;
+}
+
+.markdown-preview ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: -0.05em;
+  line-height: 1.45;
+  font-size: 0.75rem; /* ~12px to make it visible and perfectly proportioned */
+  color: #4b5563; /* soft dark gray */
+}
+
+.markdown-preview blockquote {
+  padding: 0.375rem 0.75rem;
+  margin: 0.75rem 0;
+  color: #4b5563;
+  border-left: 3px solid #d1d5db;
+  background-color: #f9fafb;
+}
+
+.markdown-preview code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background-color: #f3f4f6;
+  padding: 0.15rem 0.3rem;
+  border-radius: 0.2rem;
+  color: #eb5757;
+}
+
+.markdown-preview pre {
+  background-color: #f3f4f6;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  overflow-x: auto;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.markdown-preview pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  color: inherit;
+  font-size: 0.625rem; /* 10px */
+}
+
+.markdown-preview table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.markdown-preview th, .markdown-preview td {
+  border: 1px solid #e5e7eb;
+  padding: 0.375rem 0.5rem;
+  text-align: left;
+}
+
+.markdown-preview th {
+  background-color: #f9fafb;
+  font-weight: 600;
+}
+
+.markdown-preview hr {
+  display: none !important;
+}
+
+.markdown-preview img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.375rem;
+}
+
+/* Page breaking helpers for PDF export */
+.pdf-page-break-before {
+  page-break-before: always;
+  break-before: page;
+}
+
+.pdf-page-break-after {
+  page-break-after: always;
+  break-after: page;
+}
+
+.pdf-page-break-inside-avoid {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+/* Hide scrollbars but allow scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

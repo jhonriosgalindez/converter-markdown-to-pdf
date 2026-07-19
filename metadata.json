@@ -1,0 +1,6 @@
+{
+  "name": "Markdown to PDF Converter",
+  "description": "Una aplicación sencilla para editar Markdown con vista previa en tiempo real y exportación a PDF.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
